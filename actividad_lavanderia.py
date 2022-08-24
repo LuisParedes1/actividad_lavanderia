@@ -11,8 +11,6 @@ for linea_leida in datos:
         print(linea)
 
 
-# prueba
-
     
 
 
