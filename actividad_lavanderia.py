@@ -2,6 +2,7 @@ datos = open('primer_problema.txt', 'r')
 archivo_final = open('primer_solucion.txt', 'w')
 
 prendas = []
+lavados = 0
 
 # Leo los datos
 for linea_leida in datos:
@@ -24,8 +25,7 @@ for linea_leida in datos:
 
 
 # Ordeno segun el peso de cada prenda
-prendas = sorted(prendas,key=lambda x: x[2], reverse=True)
-    
+prendas = sorted(prendas,key=lambda x: x[2], reverse=True)  
 
 # Busco las compatibles de las prendas mas sucias
 todas_prendas = set([ i for i in range(1,len(prendas)+1) ]) # Creo las prendas
@@ -35,7 +35,6 @@ prendas_incompatibles = {}
 
 for i in prendas:
     prendas_incompatibles[i[0]]=set(i[1])
-
 
 
 for i in [ i[0] for i in prendas ]:
@@ -55,10 +54,11 @@ for i in [ i[0] for i in prendas ]:
    
 
     todas_prendas = todas_prendas - set(compatibles_final)
+    lavados = lavados+1
 
     # Escribo las prendas finales
     for m in compatibles_final:
-        escribir=[m,prendas[i-1][2]]
+        escribir=[m,lavados]
         archivo_final.write(" ".join(map(str,escribir)))
         archivo_final.write(" ".join(map(str,"\n")))
     
