@@ -2,7 +2,7 @@ datos = open('primer_problema.txt', 'r')
 archivo_final = open('primer_solucion.txt', 'w')
 
 prendas = []
-lavados = 0
+lavados = 1
 
 # Leo los datos
 for linea_leida in datos:
@@ -24,43 +24,55 @@ for linea_leida in datos:
         prendas[n_prenda-1][2] = int(linea[2])
 
 
-# Ordeno segun el peso de cada prenda
+# Ordeno segun el tiempo de lavado de cada prenda
 prendas = sorted(prendas,key=lambda x: x[2], reverse=True)  
 
 # Busco las compatibles de las prendas mas sucias
 todas_prendas = set([ i for i in range(1,len(prendas)+1) ]) # Creo las prendas
 
-
+# Creo un diccionario para las prendas incompatibles
 prendas_incompatibles = {}
 
 for i in prendas:
     prendas_incompatibles[i[0]]=set(i[1])
 
 
+# Creo un diccionario para los tiempos de las prendas
+tiempo_prendas_incompatibles = {}
+
+for i in prendas:
+    tiempo_prendas_incompatibles[i[0]]=i[2]
+
 for i in [ i[0] for i in prendas ]:
     num = i
     compatibles = todas_prendas-prendas_incompatibles[num]
-    
+
+    # Ordeno los compatibles en orden decreciente del tiempo que tardan 
+    # en lavarse para ir agregando siempre las prendas que duran mas tiempo
+    compatibles = sorted(compatibles, key=lambda x: tiempo_prendas_incompatibles[x], reverse=True)
+
     compatibles_final = []
     
-    for i in compatibles:
+    for j in compatibles:
 
-        compatibles_final.append(i)
+        compatibles_final.append(j)
 
-        for j in compatibles_final.copy():
-            if (i in prendas_incompatibles[j]):
-                compatibles_final.remove(i)
+        for k in compatibles_final.copy():
+            if (k in prendas_incompatibles[j]):
+                compatibles_final.remove(j)
                 break
    
-
-    todas_prendas = todas_prendas - set(compatibles_final)
-    lavados = lavados+1
-
-    # Escribo las prendas finales
+    # Escribo las prendas finales en el archivo final
     for m in compatibles_final:
         escribir=[m,lavados]
         archivo_final.write(" ".join(map(str,escribir)))
         archivo_final.write(" ".join(map(str,"\n")))
+
+    todas_prendas = todas_prendas - set(compatibles_final)
+    
+    # Si no hay ropa para lavar no cuento el lavado
+    if(len(compatibles_final)>0):
+        lavados = lavados+1
     
 datos.close()
 archivo_final.close()
