@@ -48,8 +48,9 @@ for i in [ i[0] for i in prendas ]:
     if(i not in todas_prendas):
         continue
 
-    num = i
-    compatibles = todas_prendas-prendas_incompatibles[num]
+    # Hago la diferencia de conjuntos A-B para obtener aquellos elementos del total 
+    # de prendas a lavar que son compatibles para el numero i 
+    compatibles = todas_prendas - prendas_incompatibles[i]
 
     # Ordeno los compatibles en orden decreciente del tiempo que tardan 
     # en lavarse para ir agregando siempre las prendas que duran mas tiempo
@@ -61,6 +62,7 @@ for i in [ i[0] for i in prendas ]:
 
         compatibles_final.append(j)
 
+        # Si la prenda es incompatible con alguna de las prendas en el lavado, la saco
         for k in compatibles_final.copy():
             if (k in prendas_incompatibles[j]):
                 compatibles_final.remove(j)
@@ -73,10 +75,8 @@ for i in [ i[0] for i in prendas ]:
         archivo_final.write(" ".join(map(str,"\n")))
 
     todas_prendas = todas_prendas - set(compatibles_final)
-    
-    # Si no hay ropa para lavar no cuento el lavado
-    if(len(compatibles_final)>0):
-        lavados = lavados+1
+    lavados = lavados+1
+        
     
 datos.close()
 archivo_final.close()
