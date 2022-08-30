@@ -44,6 +44,10 @@ for i in prendas:
     tiempo_prendas_incompatibles[i[0]]=i[2]
 
 for i in [ i[0] for i in prendas ]:
+
+    if(i not in todas_prendas):
+        continue
+
     num = i
     compatibles = todas_prendas-prendas_incompatibles[num]
 
