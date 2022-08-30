@@ -27,8 +27,8 @@ for linea_leida in datos:
 # Ordeno segun el tiempo de lavado de cada prenda
 prendas = sorted(prendas,key=lambda x: x[2], reverse=True)  
 
-# Busco las compatibles de las prendas mas sucias
-todas_prendas = set([ i for i in range(1,len(prendas)+1) ]) # Creo las prendas
+# Creo las prendas
+todas_prendas = set([ i for i in range(1,len(prendas)+1) ]) 
 
 # Creo un diccionario para las prendas incompatibles
 prendas_incompatibles = {}
