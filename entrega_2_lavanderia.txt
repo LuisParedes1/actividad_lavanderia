@@ -54,6 +54,10 @@ Este proceso lo repito hasta que todas las prendas esten en un unico lavado.
 
     Ahora va a agregar las prendas que demoren mas tiempo y que tengan el menor numero de incompatibles, de esa forma espero poder hacer menos lavados y reducir el tiempo total.
 
+    Update: No sirvio. Empeora el rendimiento. Revierto los cambios hechos.
+
+
+
 # Comentarios Finales
 
 Se llego a que el minimo tiempo de lavado es de ___. 
