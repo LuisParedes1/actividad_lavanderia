@@ -30,6 +30,7 @@ prendas = sorted(prendas,key=lambda x: x[2], reverse=True)
 # Creo las prendas
 todas_prendas = set([ i for i in range(1,len(prendas)+1) ]) 
 
+
 # Creo un diccionario para las prendas incompatibles
 prendas_incompatibles = {}
 
@@ -37,11 +38,12 @@ for i in prendas:
     prendas_incompatibles[i[0]]=set(i[1])
 
 
-# Creo un diccionario para los tiempos de las prendas
 tiempo_prendas_incompatibles = {}
 
 for i in prendas:
     tiempo_prendas_incompatibles[i[0]]=i[2]
+
+
 
 for i in [ i[0] for i in prendas ]:
 
@@ -51,6 +53,7 @@ for i in [ i[0] for i in prendas ]:
     # Hago la diferencia de conjuntos A-B para obtener aquellos elementos del total 
     # de prendas a lavar que son compatibles para el numero i 
     compatibles = todas_prendas - prendas_incompatibles[i]
+
 
     # Ordeno los compatibles en orden decreciente del tiempo que tardan 
     # en lavarse para ir agregando siempre las prendas que duran mas tiempo
@@ -64,7 +67,7 @@ for i in [ i[0] for i in prendas ]:
 
         # Si la prenda es incompatible con alguna de las prendas en el lavado, la saco
         for k in compatibles_final.copy():
-            if (k in prendas_incompatibles[j]):
+            if (k in prendas_incompatibles[j] or j in prendas_incompatibles[k]):
                 compatibles_final.remove(j)
                 break
    

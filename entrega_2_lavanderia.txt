@@ -16,11 +16,6 @@ Ordenar las prendas segun su tiempo de lavado.
 
 La idea es agrupar todas las prendas compatibles entre si que tengan el maximo tiempo de lavado juntas de manera que haya un unico lavado para estas. Se van agrupado en grupos que sean compatibles entre si y tomen el maximo tiempo de lavado posible. 
 
----
-
-
-
-
 
 # ¿Como hacerlo?
 
@@ -35,15 +30,27 @@ Este proceso lo repito hasta que todas las prendas esten en un unico lavado.
 
 ## Supuestos
 
-- Si la prenda 1 es incompatible con la prenda 2, asumo que el reciproco es cierto (la prenda 2 es incompatible con la prenda 1)
 - Una prenda se lava en un unico lavado y el tiempo de lavado es el de la prenda mas sucia.
 - No hay factores externos que alteren las constantes (por ejemplo: la lavadora se dañe, tome mas de un ciclo en lavarse, etc)
+
+## Supuestos que ahora no se cumplen
+- Si la prenda 1 es incompatible con la prenda 2, asumo que el reciproco es cierto (la prenda 2 es incompatible con la prenda 1
 
 # ChangeLog
 
 - Version 0: Empece utilizando la misma solucion utilizada para el primer_problema, pero al probarlo me genera resultados invalidos. 
-(Por alguna razon agrupa la prenda 2 y la prenda 382 que son incompatibles)
-Voy a intentar modificarlo para que produzca resultados validos y luego lo vuelvo a probar
+    (Por alguna razon agrupa la prenda 2 y la prenda 382 que son incompatibles)
+    Voy a intentar modificarlo para que produzca resultados validos y luego lo vuelvo a probar
+
+- Version 1: Exito! Logre adaptar la solucion previa.
+
+    No servia la version inicial porque ahora el supuesto "Si la prenda 1 es incompatible con la prenda 2, entonces la prenda 2 es incompatible con la prenda 1" 
+    no se cumplia con los nuevos datos. 
+
+    Tuve que agregar que chequeara que la prenda a introducir sea compatible con las anteriores y que las anteriores sean compatibles con la nueva prenda.
+    El resultado inicial no es muy bueno pero es un buen baseline. Intentare optimizar el codigo para que se reduzca el tiempo total de lavado de las prendas.
+
+- Version _: 
 
 # Comentarios Finales
 
