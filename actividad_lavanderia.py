@@ -44,7 +44,6 @@ for i in prendas:
     tiempo_prendas_incompatibles[i[0]]=i[2]
 
 
-
 for i in [ i[0] for i in prendas ]:
 
     if(i not in todas_prendas):
@@ -57,7 +56,7 @@ for i in [ i[0] for i in prendas ]:
 
     # Ordeno los compatibles en orden decreciente del tiempo que tardan 
     # en lavarse para ir agregando siempre las prendas que duran mas tiempo
-    compatibles = sorted(compatibles, key=lambda x: tiempo_prendas_incompatibles[x], reverse=True)
+    compatibles = sorted(compatibles, key=lambda x: (tiempo_prendas_incompatibles[x],len(todas_prendas-prendas_incompatibles[x])), reverse=True)
 
     compatibles_final = []
     
