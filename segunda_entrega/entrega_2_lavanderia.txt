@@ -60,9 +60,4 @@ Este proceso lo repito hasta que todas las prendas esten en un unico lavado.
 
 # Comentarios Finales
 
-Se llego a que el minimo tiempo de lavado es de ___. 
-
-</ Comentario a borrar: 
-La resolucion llegada del problema es bastante computacionalmente demandante y para una muestra mas grande puede ser ineficiente. 
-Sin embargo el costo computacional o de tiempo de procesamiento no es un limitante para este problema asi que se toma como solucion valida del problema. 
-\>
+Se llego a que el minimo tiempo de lavado es de 492. 

@@ -1,0 +1,53 @@
+# Impresion
+
+Cada lavado debe tener prendas compatibles y el tiempo de lavado sera el de la prenda mas sucia.
+
+## Planteo del problema: 
+
+Para un conjunto de prendas compatibles dos a dos {T_1, T_2, ..., T_n}
+
+Tiempo de lavado = MAX(T_i), T_i: Tiempo de lavado de la i-esima prenda
+
+Pero ahora se pide que:
+
+Modelizar el problema mediante Programación Lineal Entera, no implementar el modelo en un solver, solo presentarlo y explicar las restricciones
+Subirlo al GitHub y marcar la entrega subiendo una solución de la tercera instancia.
+
+# Objetivo
+
+Buscar que el tiempo de lavado sea el mínimo posible. (Mismo objetivo)
+
+# Ideas a resolver
+
+Leer de archivo, para cada prenda, sus incompatibles y el peso de la misma.
+
+Ordenar las prendas segun su tiempo de lavado. 
+
+La idea es agrupar todas las prendas compatibles entre si que tengan el maximo tiempo de lavado juntas de manera que haya un unico lavado para estas. Se van agrupado en grupos que sean compatibles entre si y tomen el maximo tiempo de lavado posible. 
+
+
+# ¿Como hacerlo?
+
+Para agruparlos usare teoria de conjuntos. 
+Por ejemplo, para obtener las prendas compatibles para la prenda 2, busco todas las prendas que no pertenezcan en el conjunto de prendas incompatibles para la misma haciendo una diferencia de conjuntos (TODAS_PRENDAS - INCOMPATIBLES) 
+
+Luego voy agregando las prendas compatibles para un mismo lavado segun el orden de su tiempo de lavado.
+
+Cuando se llegue a un conjunto de prendas compatibles se meten todas en un mismo lavado y el tiempo del mismo es el de la prenda de mayor tiempo.
+
+Este proceso lo repito hasta que todas las prendas esten en un unico lavado.
+
+## Supuestos
+
+- Una prenda se lava en un unico lavado y el tiempo de lavado es el de la prenda mas sucia.
+- No hay factores externos que alteren las constantes (por ejemplo: la lavadora se dañe, tome mas de un ciclo en lavarse, etc)
+
+# ChangeLog
+
+- Version 0: Veo que el set de datos es exactamente igual al del TP1, por lo tanto el algoritmo hecho ya debe de funcionar. 
+    Lo probare para verificar y luego propongo las ecuaciones usando programacion lineal entera.
+
+
+
+# Comentarios Finales
+
