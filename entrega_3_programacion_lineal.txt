@@ -39,18 +39,23 @@ Determinar el orden de lavado de las prendas, en un periodo de tiempo, tal que e
 
 # Modelo de programacion lineal
 
-
-
-
 ## Restriccion de tiempo de lavado
 ## L_j = MAX(T_i), T_i: Tiempo de lavado de la i-esima prenda, L_j: Tiempo de lavado del j-esimo lavado
 
 Para cada i en (1,n):
     Para j en (1,n):
         Y_j*Y_ij*T_j <= L_i <= Y_ij*T_j + M*(1-Y_j)
-        sum(Y_k) = 1
+        sum(Y_j) = 1
+
+## Asignacion de Lavado
+## Si la prenda es compatible con varios lavados, quiero que lo meta en el lavado de mayor tiempo
+
+Para cada i en (1,n):
+    Y_i*L_i <= MAX_L <= Y_i*L_i + M*(1-Y_i)
+    sum(Y_i) = 1
+    
+X_i = sum(i*Y_i),  i={1,2,3,...,n}
 
 
 # Funcion Objetivo
 Z <- MIN L_1 + L_2 + ... + L_m
-
