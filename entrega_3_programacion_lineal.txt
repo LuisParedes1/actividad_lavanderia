@@ -45,16 +45,23 @@ Determinar el orden de lavado de las prendas, en un periodo de tiempo, tal que e
 Para cada i en (1,n):
     Para j en (1,n):
         Y_j*Y_ij*T_j <= L_i <= Y_ij*T_j + M*(1-Y_j)
-        sum(Y_j) = 1
+    sum(Y_j) = 1
 
 ## Asignacion de Lavado
 ## Si la prenda es compatible con varios lavados, quiero que lo meta en el lavado de mayor tiempo
 
 Para cada i en (1,n):
-    Y_i*L_i <= MAX_L <= Y_i*L_i + M*(1-Y_i)
-    sum(Y_i) = 1
-    
-X_i = sum(i*Y_i),  i={1,2,3,...,n}
+    Para cada j en (1,n):
+        Y_j*Y_ij*L_j <= MAX_L <= Y_ij*L_j + M*(1-Y_j)
+    sum(Y_j) = 1
+    X_i = sum(j*Y_j),  i={1,2,3,...,n}
+
+
+// TODO
+Quiero relacionar el lavado con el tiempo que toma el lavado. Algo como 
+Total = X1*L1 + X2*L6 + X3*L5
+
+// Todavia no se bien como hacerlo
 
 
 # Funcion Objetivo
