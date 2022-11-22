@@ -10,7 +10,9 @@ Buscar que el tiempo de lavado sea el mínimo posible.
 
 - Version 0: Verifico que el codigo actual funcione correctamente
 
-- Version 1: Obtengo un puntaje de 123 el cual es aceptable para lo que quiero. Analizo el codigo provisto
+- Version 1: Corro exitosamente mi heuristica y obtengo un puntaje de 123 el cual es aceptable para lo que quiero. Analizo el codigo provisto
+
+- Version 2: Se corrio el codigo durante 52 minutos y decidi pararlo ya que no se cuanto tiempo llegue a tomar. El problema es NP-Hard por lo que puede tomar dias. 
 
 # Informe
 El informe detallado se encuentra [aca](https://github.com/LuisParedes1/actividad_lavanderia/blob/TP4/TP_Final.pdf)
