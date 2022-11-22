@@ -13,6 +13,6 @@ Buscar que el tiempo de lavado sea el mínimo posible.
 - Version 1: Obtengo un puntaje de 123 el cual es aceptable para lo que quiero. Analizo el codigo provisto
 
 # Informe
-
+El informe detallado se encuentra [aca](https://github.com/LuisParedes1/actividad_lavanderia/blob/TP4/TP_Final.pdf)
 
 # Comentarios Finales
