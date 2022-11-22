@@ -1,5 +1,5 @@
-datos = open('tercer_problema.txt', 'r')
-archivo_final = open('tercer_solucion.txt', 'w')
+datos = open('cuarto_problema.txt', 'r',encoding='latin1')
+archivo_final = open('cuarta_solucion.txt', 'w')
 
 prendas = []
 lavados = 1
