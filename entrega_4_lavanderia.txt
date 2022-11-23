@@ -14,7 +14,10 @@ Buscar que el tiempo de lavado sea el mínimo posible.
 
 - Version 2: Se corrio el codigo durante 52 minutos y decidi pararlo ya que no se cuanto tiempo llegue a tomar. El problema es NP-Hard por lo que puede tomar dias. 
 
+- Version 3: Al correr las distintas heuristicas unicamente logro llegar a un resultado cuando aplico las restricciones de simetria. Puede ser que si lo dejo
+correr durante unos dias termine de ejecutar pero los valores de las heuristicas son relativamente cercano. 
+
+    Como no estoy interesado en tener una presicion exacta me quedo con las estimaciones burdas que me dan las heuristicas
+
 # Informe
 El informe detallado se encuentra [aca](https://github.com/LuisParedes1/actividad_lavanderia/blob/master/entrega_4.pdf)
-
-    # Comentarios Finales
